@@ -4,8 +4,8 @@ setup = function(){
     frameRate(30); 
 }
 
-var y = 0;  // position of the ball
-var speed = 2;  // how far the ball moves every time
+var y = 0;
+var speed = 2;
 
 //draw Function - will run repeatedly
 draw = function() {
@@ -14,5 +14,8 @@ draw = function() {
     fill(66, 66, 66);
     ellipse(200, y, 50, 50);
 
-    y = y + speed;  // move the ball
+    if (y > 400){speed = -2};
+    if (y < 0){speed = 2};
+
+    y = y + speed; 
 };
